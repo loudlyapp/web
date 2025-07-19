@@ -1,0 +1,5 @@
+RewriteEngine On
+RewriteCond %{REQUEST_URI} !^/upcoming\.html$
+RewriteRule ^(.*)$ /upcoming.html [R=503,L]
+ErrorDocument 503 /upcoming.html
+Header Set Retry-After "3600"

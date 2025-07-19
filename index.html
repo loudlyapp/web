@@ -1,0 +1,569 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loudly | Your Music Amplified - Discover, Stream, Share</title>
+    <meta name="description" content="Amplify your music experience with Loudly. Stream millions of songs in high quality, create personalized playlists, and discover new artists.">
+    <meta name="keywords" content="music, app, stream, high quality, playlist, artist discovery, offline music, listen to music">
+
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://loudlyapp.com/">
+    <meta property="og:title" content="Loudly | Your Music Amplified">
+    <meta property="og:description" content="Amplify your music experience with Loudly. Stream millions of songs in high quality, create personalized playlists, and discover new artists.">
+    <meta property="og:image" content="https://loudlyapp.com/og-image.jpg">
+
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://loudlyapp.com/">
+    <meta property="twitter:title" content="Loudly | Your Music Amplified">
+    <meta property="twitter:description" content="Amplify your music experience with Loudly. Stream millions of songs in high quality, create personalized playlists, and discover new artists.">
+    <meta property="twitter:image" content="https://loudlyapp.com/twitter-image.jpg">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+
+    <style>
+        :root {
+            --background-primary: #0A0A0A;
+            --background-secondary: #181818;
+            --text-primary: #E0E0E0;
+            --text-secondary: #B0B0B0;
+            --accent-purple: #B100FF;
+            --accent-pink: #FF0077;
+            --accent-aqua: #00E1FF;
+            --border-color: #333333;
+            --gradient-start: #FF0077;
+            --gradient-end: #B100FF;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background-color: var(--background-primary);
+            color: var(--text-primary);
+            font-family: 'Inter', sans-serif;
+            overflow-x: hidden;
+        }
+
+        .text-gradient {
+            background-image: linear-gradient(to right, var(--gradient-start), var(--gradient-end));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .text-accent-purple { color: var(--accent-purple); }
+        .text-accent-pink { color: var(--accent-pink); }
+        .text-accent-aqua { color: var(--accent-aqua); }
+
+        .bg-primary-dark { background-color: var(--background-primary); }
+        .bg-secondary-dark { background-color: var(--background-secondary); }
+
+        .border-dark { border-color: var(--border-color); }
+
+        header {
+            background-color: rgba(10, 10, 10, 0.8);
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+        }
+
+        .btn-gradient {
+            background-image: linear-gradient(to right, var(--gradient-start), var(--gradient-end));
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            box-shadow: 0 4px 15px rgba(255, 0, 119, 0.4);
+        }
+        .btn-gradient:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(255, 0, 119, 0.6);
+        }
+
+        ::-webkit-scrollbar {
+            width: 10px;
+        }
+        ::-webkit-scrollbar-track {
+            background: var(--background-secondary);
+        }
+        ::-webkit-scrollbar-thumb {
+            background: var(--accent-pink);
+            border-radius: 5px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: var(--accent-purple);
+        }
+
+        .testimonial-icon-color { color: var(--accent-aqua); }
+
+        .splide__arrow { display: none; }
+        .splide__pagination { bottom: -2.5rem; }
+        .splide__pagination__page {
+            width: 12px;
+            height: 12px;
+            background: rgba(255, 255, 255, 0.2);
+            margin: 0 0.3rem;
+            transition: all 0.3s ease;
+        }
+        .splide__pagination__page.is-active {
+            background: var(--accent-pink);
+            transform: scale(1.2);
+        }
+
+        .gsap-init {
+            opacity: 1;
+        }
+
+        @keyframes blob1 {
+            0%, 100% { transform: translate(0, 0) scale(1); }
+            33% { transform: translate(35vw, -20vh) scale(1.1) rotate(20deg); }
+            66% { transform: translate(-25vw, 15vh) scale(0.9) rotate(-10deg); }
+        }
+        @keyframes blob2 {
+            0%, 100% { transform: translate(0, 0) scale(1); }
+            33% { transform: translate(-30vw, 25vh) scale(0.95) rotate(-15deg); }
+            66% { transform: translate(20vw, -18vh) scale(1.05) rotate(5deg); }
+        }
+        @keyframes blob3 {
+            0%, 100% { transform: translate(0, 0) scale(1); }
+            33% { transform: translate(15vw, 30vh) scale(1.2) rotate(10deg); }
+            66% { transform: translate(-35vw, -8vh) scale(0.85) rotate(-20deg); }
+        }
+
+        .animate-blob1 { animation: blob1 25s infinite ease-in-out alternate; }
+        .animate-blob2 { animation: blob2 28s infinite ease-in-out alternate-reverse; }
+        .animate-blob3 { animation: blob3 22s infinite ease-in-out alternate; }
+
+        #features .feature-card {
+            background-color: var(--background-secondary);
+            border: 1px solid var(--border-color);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+        #features .feature-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+        }
+
+        section {
+            padding-top: 8rem;
+            padding-bottom: 8rem;
+        }
+        @media (min-width: 768px) {
+            section {
+                padding-top: 10rem;
+                padding-bottom: 10rem;
+            }
+        }
+
+        .footer-link-hover:hover {
+            color: var(--accent-pink);
+        }
+
+        @media (min-width: 1024px) {
+            body {
+                display: flex;
+                flex-direction: row;
+            }
+
+            .main-content-wrapper {
+                margin-left: 96px;
+                flex-grow: 1;
+                width: calc(100% - 96px);
+            }
+
+            .side-nav {
+                position: fixed;
+                left: 0;
+                top: 0;
+                bottom: 0;
+                width: 96px;
+                background-color: var(--background-primary);
+                border-right: 1px solid var(--border-color);
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                z-index: 40;
+            }
+
+            .side-nav-item {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+                padding: 1rem 0;
+                cursor: pointer;
+                transition: all 0.3s ease;
+                color: var(--text-secondary);
+                position: relative;
+            }
+
+            .side-nav-item:hover {
+                color: var(--text-primary);
+            }
+
+            .side-nav-item.active {
+                color: var(--accent-pink);
+                transform: scale(1.05);
+            }
+
+            .side-nav-item.active::before {
+                content: '';
+                position: absolute;
+                left: 0;
+                top: 50%;
+                transform: translateY(-50%);
+                width: 4px;
+                height: 80%;
+                background-image: linear-gradient(to bottom, var(--accent-pink), var(--accent-purple));
+                border-radius: 2px;
+            }
+
+            .side-nav-item .icon {
+                font-size: 2.5rem;
+                margin-bottom: 0.5rem;
+            }
+
+            .side-nav-item .label {
+                font-size: 0.875rem;
+                font-weight: 600;
+            }
+
+            header {
+                width: calc(100% - 96px);
+                left: 96px;
+                background-color: rgba(10, 10, 10, 0.8);
+            }
+        }
+
+        @media (max-width: 1023px) {
+            .side-nav {
+                display: none;
+            }
+            .main-content-wrapper {
+                margin-left: 0;
+                width: 100%;
+            }
+            header {
+                width: 100%;
+                left: 0;
+            }
+
+            .mobile-menu {
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background-color: var(--background-primary);
+                z-index: 1000;
+                transform: translateX(100%);
+                transition: transform 0.3s ease-in-out;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                padding: 2rem;
+            }
+
+            .mobile-menu.open {
+                transform: translateX(0);
+            }
+
+            .mobile-menu-item {
+                display: flex;
+                align-items: center;
+                font-size: 1.8rem;
+                padding: 1rem 0;
+                color: var(--text-primary);
+                transition: color 0.3s ease;
+                width: 100%;
+                justify-content: center;
+                position: relative;
+            }
+
+            .mobile-menu-item:hover {
+                color: var(--accent-pink);
+            }
+            .mobile-menu-item .icon {
+                font-size: 1.8rem;
+                margin-right: 0.75rem;
+                color: var(--text-primary);
+                transition: color 0.3s ease;
+            }
+
+            .mobile-menu-item.active {
+                color: var(--accent-pink);
+                font-weight: 700;
+                transform: scale(1.05);
+            }
+            .mobile-menu-item.active .icon {
+                color: var(--accent-pink);
+            }
+            .mobile-menu-item.active::before {
+                content: '';
+                position: absolute;
+                left: 10px;
+                top: 50%;
+                transform: translateY(-50%);
+                width: 6px;
+                height: 70%;
+                background-image: linear-gradient(to bottom, var(--accent-pink), var(--accent-purple));
+                border-radius: 3px;
+                animation: fadeInLine 0.5s ease-out;
+            }
+
+            @keyframes fadeInLine {
+                from { opacity: 0; transform: translateY(-50%) translateX(-10px); }
+                to { opacity: 1; transform: translateY(-50%) translateX(0); }
+            }
+        }
+    </style>
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800;900&display=swap" rel="stylesheet">
+</head>
+<body x-data="{ lang: 'en', texts: {}, activeSection: 'hero', isMobileMenuOpen: false }" x-init="
+    lang = 'en';
+
+    texts.en = {
+        heroTitle: 'Loudly. Your World, Amplified.',
+        heroSubtitle: 'Stream millions of songs, create personalized playlists, and discover new artists, all in stunning high fidelity.',
+        getApp: 'Get the App Now',
+        sectionFeatures: 'Experience Music Like Never Before',
+        feature1Title: 'High-Fidelity Audio',
+        feature1Desc: 'Immerse yourself in crystal-clear sound with lossless audio quality.',
+        feature1Img: 'https://picsum.photos/seed/audio/800/600',
+        feature2Title: 'Smart Playlists',
+        feature2Desc: 'Discover new music tailored to your taste with AI-powered recommendations.',
+        feature2Img: 'https://picsum.photos/seed/playlist/800/600',
+        feature3Title: 'Offline Access',
+        feature3Desc: 'Download your favorite tracks and listen anytime, anywhere, without internet.',
+        feature3Img: 'https://picsum.photos/seed/offline/800/600',
+        feature4Title: 'Seamless Sharing',
+        feature4Desc: 'Share your favorite songs and playlists with friends across social media.',
+        feature4Img: 'https://picsum.photos/seed/share/800/600',
+        feature5Title: 'Cross-Device Sync',
+        feature5Desc: 'Your music follows you. Seamlessly switch between phone, tablet, and desktop.',
+        feature5Img: 'https://picsum.photos/seed/sync/800/600',
+        feature6Title: 'Curated Collections',
+        feature6Desc: 'Explore expertly curated playlists for every mood and genre.',
+        feature6Img: 'https://picsum.photos/seed/curated/800/600',
+        sectionTestimonials: 'What Our Users Say',
+        testimonial1Quote: 'Loudly has completely transformed my music experience. The sound quality is unmatched, and I love the personalized recommendations!',
+        testimonial1Author: 'Jane Doe',
+        testimonial1Role: 'Music Enthusiast',
+        testimonial2Quote: 'Finally, an app that understands my taste in music. Loudly\'s offline mode is a lifesaver for my commutes.',
+        testimonial2Author: 'John Smith',
+        testimonial2Role: 'Commuter & Audiophile',
+        testimonial3Quote: 'The interface is so intuitive and beautiful. I spend hours just exploring new artists with Loudly.',
+        testimonial3Author: 'Emily White',
+        testimonial3Role: 'Artist Discoverer',
+        ctaTitle: 'Ready to Amplify Your Music?',
+        ctaSubtitle: 'Download Loudly today and unlock an unparalleled listening journey. Available on all major mobile platforms.',
+        appStore: 'App Store',
+        googlePlay: 'Google Play',
+        footerRights: '2025 Loudly. All rights reserved.',
+        privacyPolicy: 'Privacy Policy',
+        termsOfService: 'Terms of Service',
+        followUs: 'Follow Us',
+        quickLinks: 'Quick Links',
+        legal: 'Legal',
+        navHero: 'Home',
+        navFeatures: 'Features',
+        navTestimonials: 'Reviews',
+        navDownload: 'Download',
+        navDonate: 'Donate',
+        comingSoon: 'Coming Soon!'
+    };
+    texts.tr = texts.en;
+">
+
+    <nav class="side-nav">
+        <a href="index" :class="{'side-nav-item': true, 'active': activeSection === 'hero'}" @click="activeSection = 'hero'; gsap.to(window, {scrollTo: '#hero', duration: 1.2, ease: 'power3.inOut'});">
+            <i class='bx bx-home-alt icon'></i>
+            <span class="label" x-text="texts[lang].navHero"></span>
+        </a>
+        <a href="features" :class="{'side-nav-item': true, 'active': activeSection === 'features'}" @click="activeSection = 'features'; gsap.to(window, {scrollTo: '#features', duration: 1.2, ease: 'power3.inOut'});">
+            <i class='bx bx-grid-alt icon'></i>
+            <span class="label" x-text="texts[lang].navFeatures"></span>
+        </a>
+        <a href="donate" :class="{'side-nav-item': true, 'active': activeSection === 'Donate'}" @click="activeSection = 'Donate'; gsap.to(window, {scrollTo: '#Donate', duration: 1.2, ease: 'power3.inOut'});">
+            <i class='bx bx-dollar-circle icon'></i>
+            <span class="label" x-text="texts[lang].navDonate"></span>
+        </a>
+        <a href="download" :class="{'side-nav-item': true, 'active': activeSection === 'download'}" @click="activeSection = 'download'; gsap.to(window, {scrollTo: '#download', duration: 1.2, ease: 'power3.inOut'});">
+            <i class='bx bx-download icon'></i>
+            <span class="label" x-text="texts[lang].navDownload"></span>
+        </a>
+    </nav>
+
+    <div class="main-content-wrapper">
+        <header class="fixed top-0 left-0 right-0 z-50 py-4 px-6 flex justify-between items-center transition-all duration-300">
+            <div class="text-3xl font-extrabold text-gradient">Loudly</div>
+            <button @click="isMobileMenuOpen = !isMobileMenuOpen" class="lg:hidden text-white focus:outline-none">
+                <i class='bx bx-menu text-4xl'></i>
+            </button>
+        </header>
+
+        <div class="mobile-menu lg:hidden" :class="{'open': isMobileMenuOpen}">
+            <button @click="isMobileMenuOpen = false" class="absolute top-6 right-6 text-white focus:outline-none">
+                <i class='bx bx-x text-5xl'></i>
+            </button>
+            <nav class="flex flex-col items-center space-y-6">
+                <a href="index" :class="{'mobile-menu-item': true, 'active': activeSection === 'hero'}" @click="isMobileMenuOpen = false; activeSection = 'hero'; gsap.to(window, {scrollTo: '#hero', duration: 1.2, ease: 'power3.inOut'});">
+                    <i class='bx bx-home-alt icon'></i>
+                    <span x-text="texts[lang].navHero"></span>
+                </a>
+                <a href="features" :class="{'mobile-menu-item': true, 'active': activeSection === 'features'}" @click="isMobileMenuOpen = false; activeSection = 'features'; gsap.to(window, {scrollTo: '#features', duration: 1.2, ease: 'power3.inOut'});">
+                    <i class='bx bx-grid-alt icon'></i>
+                    <span x-text="texts[lang].navFeatures"></span>
+                </a>
+                <a href="donate" :class="{'mobile-menu-item': true, 'active': activeSection === 'Donate'}" @click="isMobileMenuOpen = false; activeSection = 'Donate'; gsap.to(window, {scrollTo: '#Donate', duration: 1.2, ease: 'power3.inOut'});">
+                    <i class='bx bx-dollar-circle icon'></i>
+                    <span x-text="texts[lang].navDonate"></span>
+                </a>
+                <a href="download" :class="{'mobile-menu-item': true, 'active': activeSection === 'download'}" @click="isMobileMenuOpen = false; activeSection = 'download'; gsap.to(window, {scrollTo: '#download', duration: 1.2, ease: 'power3.inOut'});">
+                    <i class='bx bx-download icon'></i>
+                    <span x-text="texts[lang].navDownload"></span>
+                </a>
+            </nav>
+        </div>
+
+        <section id="hero" class="relative min-h-screen flex items-center justify-center p-4 overflow-hidden bg-primary-dark">
+            <div class="absolute inset-0 z-0 overflow-hidden">
+                <div class="absolute w-96 h-96 rounded-full bg-accent-pink blur-3xl opacity-10 animate-blob1 top-1/4 left-1/4"></div>
+                <div class="absolute w-96 h-96 rounded-full bg-accent-aqua blur-3xl opacity-10 animate-blob2 bottom-1/4 right-1/4"></div>
+                <div class="absolute w-80 h-80 rounded-full bg-accent-purple blur-3xl opacity-10 animate-blob3 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"></div>
+            </div>
+            <div class="text-center z-10 max-w-5xl mx-auto">
+                <h1 class="text-5xl md:text-7xl lg:text-8xl font-extrabold mb-6 text-gradient gsap-init" x-text="texts[lang].heroTitle"></h1>
+                <p class="text-lg md:text-xl lg:text-2xl max-w-3xl mx-auto mb-10 text-text-secondary gsap-init" x-text="texts[lang].heroSubtitle"></p>
+                <a href="download#download" class="inline-block px-10 py-5 rounded-full text-xl font-bold shadow-lg transform btn-gradient text-white gsap-init" x-text="texts[lang].getApp"></a>
+            </div>
+        </section>
+
+        <div class="border-t border-gray-800"></div>
+
+        <footer class="py-12 px-4 bg-primary-dark text-text-secondary">
+            <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8 text-center md:text-left">
+                <div class="col-span-1 md:col-span-2 lg:col-span-2 mb-8 md:mb-0">
+                    <div class="text-4xl font-extrabold text-gradient mb-4">Loudly</div>
+                    <p class="text-sm leading-relaxed max-w-sm mx-auto md:mx-0">
+                        Amplify your music with Loudly. High-quality audio, smart playlists, and seamless discoveries at your fingertips.
+                    </p>
+                </div>
+
+                <div>
+                    <h4 class="font-bold text-xl mb-4 text-text-primary" x-text="texts[lang].quickLinks"></h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-text-secondary hover:text-accent-pink transition-colors duration-200 footer-link-hover">Home</a></li>
+                        <li><a href="#" class="text-text-secondary hover:text-accent-pink transition-colors duration-200 footer-link-hover">Features</a></li>
+                        <li><a href="#" class="text-text-secondary hover:text-accent-pink transition-colors duration-200 footer-link-hover">Donate</a></li>
+                        <li><a href="#" class="text-text-secondary hover:text-accent-pink transition-colors duration-200 footer-link-hover">Download</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="font-bold text-xl mb-4 text-text-primary">App</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-text-secondary hover:text-accent-pink transition-colors duration-200 footer-link-hover">Download App</a></li>
+                        <li><a href="#" class="text-text-secondary hover:text-accent-pink transition-colors duration-200 footer-link-hover">Features</a></li>
+                        <li><a href="#" class="text-text-secondary hover:text-accent-pink transition-colors duration-200 footer-link-hover">Pricing</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="font-bold text-xl mb-4 text-text-primary" x-text="texts[lang].legal"></h4>
+                    <ul class="space-y-2">
+                        <li><a href="privacy" class="text-text-secondary hover:text-accent-pink transition-colors duration-200 footer-link-hover" x-text="texts[lang].privacyPolicy"></a></li>
+                        <li><a href="tos" class="text-text-secondary hover:text-accent-pink transition-colors duration-200 footer-link-hover" x-text="texts[lang].termsOfService"></a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="max-w-7xl mx-auto border-t border-gray-800 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center text-sm text-gray-500">
+                <p x-text="texts[lang].footerRights"></p>
+				<p class="mt-2 md:mt-0 text-gray-400">Developed by <span class="text-accent-aqua hover:underline">rescci</span></p>
+                <div class="flex space-x-6 mt-6 md:mt-0">
+                    <a href="https://github.com/RRechz" target="_blank" aria-label="Github" class="transform hover:scale-110 transition-transform duration-300 text-gray-400 hover:text-accent-aqua">
+                        <i class='bx bxl-github text-2xl'></i>
+                    </a>
+                    <a href="https://t.me/by_BabelSoftware" target="_blank" aria-label="Telegram" class="transform hover:scale-110 transition-transform duration-300 text-gray-400 hover:text-accent-aqua">
+                        <i class='bx bxl-telegram text-2xl'></i>
+                    </a>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <button id="back-to-top" class="fixed bottom-8 right-8 p-3 rounded-full shadow-lg transition-all duration-300 transform scale-0 opacity-0 bg-accent-pink text-white hover:bg-accent-purple z-40">
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-arrow-up" width="28" height="28" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M12 5l0 14" /><path d="M18 11l-6 -6l-6 6" /></svg>
+    </button>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollToPlugin.min.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.13.7/dist/cdn.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/js/splide.min.js"></script>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            gsap.registerPlugin(ScrollTrigger, ScrollToPlugin);
+
+            gsap.from("#hero .gsap-init", {
+                y: 60,
+                opacity: 0,
+                scale: 0.95,
+                duration: 1.5,
+                ease: "power3.out",
+                stagger: 0.2,
+                delay: 0.5
+            });
+
+            gsap.to(".animate-blob1", {
+                x: "random(-100, 100)", y: "random(-100, 100)", scale: "random(0.9, 1.2)", rotation: "random(-30, 30)", duration: 20, repeat: -1, ease: "sine.inOut", yoyo: true
+            });
+            gsap.to(".animate-blob2", {
+                x: "random(-100, 100)", y: "random(-100, 100)", scale: "random(0.8, 1.1)", rotation: "random(-20, 20)", duration: 22, repeat: -1, ease: "sine.inOut", yoyo: true
+            });
+            gsap.to(".animate-blob3", {
+                x: "random(-100, 100)", y: "random(-100, 100)", scale: "random(1, 1.3)", rotation: "random(-40, 40)", duration: 18, repeat: -1, ease: "sine.inOut", yoyo: true
+            });
+
+            const backToTopButton = document.getElementById('back-to-top');
+
+            ScrollTrigger.create({
+                trigger: "body",
+                start: "top -20%",
+                end: "bottom top",
+                onEnter: () => gsap.to(backToTopButton, { scale: 1, opacity: 1, duration: 0.4, ease: "back.out(1.7)" }),
+                onLeaveBack: () => gsap.to(backToTopButton, { scale: 0, opacity: 0, duration: 0.3 })
+            });
+
+            backToTopButton.addEventListener('click', () => {
+                gsap.to(window, { scrollTo: 0, duration: 1.2, ease: "power3.inOut" });
+            });
+
+            if (window.innerWidth >= 1024) {
+                const sections = ['hero', 'features', 'testimonials', 'download'];
+                const bodyEl = document.querySelector('body');
+
+                sections.forEach(sectionId => {
+                    ScrollTrigger.create({
+                        trigger: `#${sectionId}`,
+                        start: `top center+=100`,
+                        end: `bottom center+=100`,
+                        onEnter: () => Alpine.store().data.activeSection = sectionId,
+                        onEnterBack: () => Alpine.store().data.activeSection = sectionId,
+                    });
+                });
+
+                Alpine.store('data', {
+                    activeSection: 'hero'
+                });
+            }
+        });
+    </script>
+</body>
+</html>

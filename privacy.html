@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loudly V1.0 FOSS | Privacy Policy</title>
+    <meta name="description" content="Loudly V1.0 FOSS Privacy Policy. Learn how we collect, use, and protect your data.">
+    <meta name="keywords" content="music, app, stream, privacy, policy, data, security, FOSS">
+
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://loudlyapp.com/privacy">
+    <meta property="og:title" content="Loudly V1.0 FOSS | Privacy Policy">
+    <meta property="og:description" content="Loudly V1.0 FOSS Privacy Policy. Learn how we collect, use, and protect your data.">
+    <meta property="og:image" content="https://loudlyapp.com/og-image.jpg">
+
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://loudlyapp.com/privacy">
+    <meta property="twitter:title" content="Loudly V1.0 FOSS | Privacy Policy">
+    <meta property="twitter:description" content="Loudly V1.0 FOSS Privacy Policy. Learn how we collect, use, and protect your data.">
+    <meta property="twitter:image" content="https://loudlyapp.com/twitter-image.jpg">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+
+    <style>
+        :root {
+            --background-primary: #0A0A0A;
+            --background-secondary: #181818;
+            --text-primary: #E0E0E0;
+            --text-secondary: #B0B0B0;
+            --accent-purple: #B100FF;
+            --accent-pink: #FF0077;
+            --accent-aqua: #00E1FF;
+            --border-color: #333333;
+            --gradient-start: #FF0077;
+            --gradient-end: #B100FF;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background-color: var(--background-primary);
+            color: var(--text-primary);
+            font-family: 'Inter', sans-serif;
+            overflow-x: hidden;
+        }
+
+        .text-gradient {
+            background-image: linear-gradient(to right, var(--gradient-start), var(--gradient-end));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .text-accent-purple { color: var(--accent-purple); }
+        .text-accent-pink { color: var(--accent-pink); }
+        .text-accent-aqua { color: var(--accent-aqua); }
+
+        .bg-primary-dark { background-color: var(--background-primary); }
+        .bg-secondary-dark { background-color: var(--background-secondary); }
+
+        .border-dark { border-color: var(--border-color); }
+
+        header {
+            background-color: rgba(10, 10, 10, 0.8);
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+        }
+
+        .btn-gradient {
+            background-image: linear-gradient(to right, var(--gradient-start), var(--gradient-end));
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            box-shadow: 0 4px 15px rgba(255, 0, 119, 0.4);
+        }
+        .btn-gradient:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(255, 0, 119, 0.6);
+        }
+
+        ::-webkit-scrollbar {
+            width: 10px;
+        }
+        ::-webkit-scrollbar-track {
+            background: var(--background-secondary);
+        }
+        ::-webkit-scrollbar-thumb {
+            background: var(--accent-pink);
+            border-radius: 5px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: var(--accent-purple);
+        }
+
+        section {
+            padding-top: 8rem;
+            padding-bottom: 8rem;
+        }
+        @media (min-width: 768px) {
+            section {
+                padding-top: 10rem;
+                padding-bottom: 10rem;
+            }
+        }
+
+        .footer-link-hover:hover {
+            color: var(--accent-pink);
+        }
+        
+        @media (min-width: 1024px) {
+            body {
+                display: flex;
+                flex-direction: row;
+            }
+
+            .main-content-wrapper {
+                margin-left: 96px;
+                flex-grow: 1;
+                width: calc(100% - 96px);
+            }
+
+            .side-nav {
+                position: fixed;
+                left: 0;
+                top: 0;
+                bottom: 0;
+                width: 96px;
+                background-color: var(--background-primary);
+                border-right: 1px solid var(--border-color);
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                z-index: 40;
+            }
+
+            .side-nav-item {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+                padding: 1rem 0;
+                cursor: pointer;
+                transition: all 0.3s ease;
+                color: var(--text-secondary);
+                position: relative;
+            }
+
+            .side-nav-item:hover {
+                color: var(--text-primary);
+            }
+
+            .side-nav-item.active {
+                color: var(--accent-pink);
+                transform: scale(1.05);
+            }
+
+            .side-nav-item.active::before {
+                content: '';
+                position: absolute;
+                left: 0;
+                top: 50%;
+                transform: translateY(-50%);
+                width: 4px;
+                height: 80%;
+                background-image: linear-gradient(to bottom, var(--accent-pink), var(--accent-purple));
+                border-radius: 2px;
+            }
+
+            .side-nav-item .icon {
+                font-size: 2.5rem;
+                margin-bottom: 0.5rem;
+            }
+
+            .side-nav-item .label {
+                font-size: 0.875rem;
+                font-weight: 600;
+            }
+
+            header {
+                width: calc(100% - 96px);
+                left: 96px;
+                background-color: rgba(10, 10, 10, 0.8);
+            }
+        }
+
+        @media (max-width: 1023px) {
+            .side-nav {
+                display: none;
+            }
+            .main-content-wrapper {
+                margin-left: 0;
+                width: 100%;
+            }
+            header {
+                width: 100%;
+                left: 0;
+                justify-content: center;
+            }
+            header button {
+                display: none;
+            }
+            section {
+                padding-top: 8rem;
+            }
+        }
+        @media (max-width: 442px) {
+            section {
+                padding-top: 12rem;
+            }
+        }
+
+        .content-section {
+            padding-bottom: 3rem;
+            margin-bottom: 3rem;
+            border-bottom: 1px solid var(--border-color);
+        }
+        .content-section:last-of-type {
+            border-bottom: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+
+        .prose h2 {
+            margin-top: 2rem;
+            margin-bottom: 1.5rem;
+        }
+        .prose p {
+            margin-bottom: 1.5rem;
+        }
+        .prose ul {
+            margin-bottom: 2rem;
+            padding-left: 1.5rem;
+        }
+        .prose ul li {
+            margin-bottom: 0.75rem;
+        }
+    </style>
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800;900&display=swap" rel="stylesheet">
+</head>
+<body x-data="{ activeSection: 'privacy' }" x-init="
+    Alpine.store('appData', {
+        lang: 'en',
+        texts: {
+            en: {
+                footerRights: '2025 Loudly. All rights reserved.',
+                privacyPolicy: 'Privacy Policy',
+                termsOfService: 'Terms of Service',
+                followUs: 'Follow Us',
+                quickLinks: 'Quick Links',
+                legal: 'Legal',
+                navHome: 'Home',
+                navPrivacy: 'Privacy',
+                navTerms: 'Terms',
+                privacyPolicyTitle: 'Privacy Policy',
+                privacyIntro: 'Welcome to Loudly! This Privacy Policy describes how Loudly collects, uses, and discloses information from and about you when you use our music application and services (collectively, the &quot;Services&quot;). We are committed to protecting your privacy and handling your data in a transparent and secure manner.',
+                privacyCollectionTitle: '1. Information We Collect',
+                privacyCollectionPara1: 'We collect information to provide and improve our Services. The types of information we collect include:',
+                privacyCollectionListItem1: 'Account Information: When you create an account, we collect your email address, username, and password. You may also choose to provide additional information, such as your profile picture and gender.',
+                privacyCollectionListItem2: 'Usage Data: We collect information about how you interact with our Services, such as the music you listen to, playlists you create, artists you follow, search queries, and your activity within the app (e.g., skips, likes, shares).',
+                privacyCollectionListItem3: 'Device Information: We may collect information about the device you use to access our Services, including the device type, operating system, unique device identifiers, and mobile network information.',
+                privacyCollectionListItem4: 'Log Data: Our servers automatically record information that your browser sends whenever you visit our Services. This log data may include your IP address, browser type, referring/exit pages, and the date and time of your requests.',
+                privacyCollectionListItem5: 'Optional Information: You may choose to provide us with additional information, such as feedback, survey responses, or participation in promotions. This information is provided voluntarily.',
+                privacyUseTitle: '2. How We Use Your Information',
+                privacyUsePara1: 'We use the information we collect for various purposes, including:',
+                privacyUseListItem1: 'To Provide and Maintain Services: To operate, maintain, and improve our Services, including processing your requests, managing your account, and providing customer support.',
+                privacyUseListItem2: 'To Personalize Your Experience: To recommend music, artists, and playlists tailored to your listening habits and preferences.',
+                privacyUseListItem3: 'To Analyze and Improve Services: To understand how users interact with our Services, troubleshoot issues, perform data analysis, research, and improve the functionality and performance of our app.',
+                privacyUseListItem4: 'To Communicate with You: To send you service-related announcements, updates, security alerts, and support messages. We may also send promotional communications about new features or special offers, from which you can opt-out.',
+                privacyUseListItem5: 'To Ensure Security: To detect, prevent, and address technical issues, fraud, and other illegal activities, and to protect the rights, property, or safety of Loudly, our users, or others.',
+                privacySharingTitle: '3. How We Share Your Information',
+                privacySharingPara1: 'We may share your information in the following circumstances:',
+                privacySharingListItem1: 'With Your Consent: We may share your information with third parties when we have your explicit consent to do so.',
+                privacySharingListItem2: 'Service Providers: We engage third-party companies and individuals to perform services on our behalf (e.g., hosting, analytics, customer support). These service providers have access to your information only to perform these tasks on our behalf and are obligated not to disclose or use it for any other purpose.',
+                privacySharingListItem3: 'Legal Requirements: We may disclose your information if required to do so by law or in response to valid requests by public authorities (e.g., a court order or government agency request).',
+                privacySharingListItem4: 'Business Transfers: In the event of a merger, acquisition, or sale of all or a portion of our assets, your information may be transferred as part of that transaction. We will notify you via email and/or a prominent notice on our Services of any change in ownership or uses of your personal information, as well as any choices you may have regarding your personal information.',
+                privacySharingListItem5: 'Aggregated or Anonymized Data: We may share aggregated or anonymized information that cannot reasonably be used to identify you with third parties for various purposes, including analytics, research, and marketing.',
+                privacySecurityTitle: '4. Data Security',
+                privacySecurityPara1: 'We implement reasonable security measures to protect your information from unauthorized access, alteration, disclosure, or destruction. However, no method of transmission over the Internet or method of electronic storage is 100% secure. Therefore, we cannot guarantee its absolute security.',
+                privacyYourRightsTitle: '5. Your Rights and Choices',
+                privacyYourRightsPara1: 'You have certain rights regarding your information:',
+                privacyYourRightsListItem1: 'Access and Update: You can access and update your account information through your profile settings within the app.',
+                privacyYourRightsListItem2: 'Opt-Out of Marketing Communications: You can opt-out of receiving promotional emails from us by following the unsubscribe instructions provided in those emails.',
+                privacyYourRightsListItem3: 'Data Portability: You may request a copy of the personal data we hold about you.',
+                privacyYourRightsListItem4: 'Deletion: You may request the deletion of your account and associated data. Please note that some information may be retained for legal or legitimate business purposes.',
+                privacyChangesTitle: '6. Changes to This Privacy Policy',
+                privacyChangesPara1: 'We may update our Privacy Policy from time to time. We will notify you of any changes by posting the new Privacy Policy on this page and updating the &quot;Last Updated&quot; date. You are advised to review this Privacy Policy periodically for any changes. Changes to this Privacy Policy are effective when they are posted on this page.',
+                privacyContactTitle: '7. Contact Us',
+                privacyContactPara1: 'If you have any questions about this Privacy Policy, please contact us at: support@loudlyapp.com'
+            }
+        }
+    });
+">
+
+    <nav class="side-nav">
+        <a href="index" :class="{'side-nav-item': true, 'active': activeSection === 'home'}">
+            <i class='bx bx-home-alt icon'></i>
+            <span class="label" x-text="$store.appData.texts[$store.appData.lang].navHome"></span>
+        </a>
+        <a href="privacy" :class="{'side-nav-item': true, 'active': activeSection === 'privacy'}">
+            <i class='bx bx-lock-alt icon'></i>
+            <span class="label" x-text="$store.appData.texts[$store.appData.lang].navPrivacy"></span>
+        </a>
+        <a href="tos" :class="{'side-nav-item': true, 'active': activeSection === 'terms'}">
+            <i class='bx bx-file icon'></i>
+            <span class="label" x-text="$store.appData.texts[$store.appData.lang].navTerms"></span>
+        </a>
+    </nav>
+
+    <div class="main-content-wrapper">
+        <header class="fixed top-0 left-0 right-0 z-50 py-4 px-6 flex justify-between items-center transition-all duration-300">
+            <div class="text-3xl font-extrabold text-gradient">Loudly</div>
+        </header>
+
+        <section id="privacy" class="relative min-h-screen flex flex-col p-4 overflow-hidden bg-primary-dark text-left">
+            <div class="z-10 max-w-4xl mx-auto py-12 px-4 md:px-8 lg:py-24">
+                <h1 class="text-5xl md:text-7xl lg:text-8xl font-extrabold mb-6 text-gradient text-center">
+                    <span x-text="$store.appData.texts[$store.appData.lang].privacyPolicyTitle"></span>
+                </h1>
+                <div class="prose prose-invert max-w-none text-text-secondary leading-relaxed text-left">
+                    <p class="text-lg mb-8" x-text="$store.appData.texts[$store.appData.lang].privacyIntro"></p>
+
+                    <div class="content-section">
+                        <h2 class="text-3xl md:text-4xl font-bold text-text-primary" x-text="$store.appData.texts[$store.appData.lang].privacyCollectionTitle"></h2>
+                        <p x-text="$store.appData.texts[$store.appData.lang].privacyCollectionPara1"></p>
+                        <ul class="list-disc list-inside">
+                            <li x-text="$store.appData.texts[$store.appData.lang].privacyCollectionListItem1"></li>
+                            <li x-text="$store.appData.texts[$store.appData.lang].privacyCollectionListItem2"></li>
+                            <li x-text="$store.appData.texts[$store.appData.lang].privacyCollectionListItem3"></li>
+                            <li x-text="$store.appData.texts[$store.appData.lang].privacyCollectionListItem4"></li>
+                            <li x-text="$store.appData.texts[$store.appData.lang].privacyCollectionListItem5"></li>
+                        </ul>
+                    </div>
+
+                    <div class="content-section">
+                        <h2 class="text-3xl md:text-4xl font-bold text-text-primary" x-text="$store.appData.texts[$store.appData.lang].privacyUseTitle"></h2>
+                        <p x-text="$store.appData.texts[$store.appData.lang].privacyUsePara1"></p>
+                        <ul class="list-disc list-inside">
+                            <li x-text="$store.appData.texts[$store.appData.lang].privacyUseListItem1"></li>
+                            <li x-text="$store.appData.texts[$store.appData.lang].privacyUseListItem2"></li>
+                            <li x-text="$store.appData.texts[$store.appData.lang].privacyUseListItem3"></li>
+                            <li x-text="$store.appData.texts[$store.appData.lang].privacyUseListItem4"></li>
+                            <li x-text="$store.appData.texts[$store.appData.lang].privacyUseListItem5"></li>
+                        </ul>
+                    </div>
+
+                    <div class="content-section">
+                        <h2 class="text-3xl md:text-4xl font-bold text-text-primary" x-text="$store.appData.texts[$store.appData.lang].privacySharingTitle"></h2>
+                        <p x-text="$store.appData.texts[$store.appData.lang].privacySharingPara1"></p>
+                        <ul class="list-disc list-inside">
+                            <li x-text="$store.appData.texts[$store.appData.lang].privacySharingListItem1"></li>
+                            <li x-text="$store.appData.texts[$store.appData.lang].privacySharingListItem2"></li>
+                            <li x-text="$store.appData.texts[$store.appData.lang].privacySharingListItem3"></li>
+                            <li x-text="$store.appData.texts[$store.appData.lang].privacySharingListItem4"></li>
+                            <li x-text="$store.appData.texts[$store.appData.lang].privacySharingListItem5"></li>
+                        </ul>
+                    </div>
+
+                    <div class="content-section">
+                        <h2 class="text-3xl md:text-4xl font-bold text-text-primary" x-text="$store.appData.texts[$store.appData.lang].privacySecurityTitle"></h2>
+                        <p x-text="$store.appData.texts[$store.appData.lang].privacySecurityPara1"></p>
+                    </div>
+
+                    <div class="content-section">
+                        <h2 class="text-3xl md:text-4xl font-bold text-text-primary" x-text="$store.appData.texts[$store.appData.lang].privacyYourRightsTitle"></h2>
+                        <p x-text="$store.appData.texts[$store.appData.lang].privacyYourRightsPara1"></p>
+                        <ul class="list-disc list-inside">
+                            <li x-text="$store.appData.texts[$store.appData.lang].privacyYourRightsListItem1"></li>
+                            <li x-text="$store.appData.texts[$store.appData.lang].privacyYourRightsListItem2"></li>
+                            <li x-text="$store.appData.texts[$store.appData.lang].privacyYourRightsListItem3"></li>
+                            <li x-text="$store.appData.texts[$store.appData.lang].privacyYourRightsListItem4"></li>
+                        </ul>
+                    </div>
+
+                    <div class="content-section">
+                        <h2 class="text-3xl md:text-4xl font-bold text-text-primary" x-text="$store.appData.texts[$store.appData.lang].privacyChangesTitle"></h2>
+                        <p x-text="$store.appData.texts[$store.appData.lang].privacyChangesPara1"></p>
+                    </div>
+
+                    <div class="content-section">
+                        <h2 class="text-3xl md:text-4xl font-bold text-text-primary" x-text="$store.appData.texts[$store.appData.lang].privacyContactTitle"></h2>
+                        <p x-text="$store.appData.texts[$store.appData.lang].privacyContactPara1"></p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <div class="border-t border-gray-800"></div>
+
+        <footer class="py-12 px-4 bg-primary-dark text-text-secondary">
+            <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8 text-center md:text-left">
+                <div class="col-span-1 md:col-span-2 lg:col-span-2 mb-8 md:mb-0">
+                    <div class="text-4xl font-extrabold text-gradient mb-4">Loudly</div>
+                    <p class="text-sm leading-relaxed max-w-sm mx-auto md:mx-0">
+                        Amplify your music with Loudly. High-quality audio, smart playlists, and seamless discoveries at your fingertips.
+                    </p>
+                </div>
+
+                <div>
+                    <h4 class="font-bold text-xl mb-4 text-text-primary" x-text="$store.appData.texts[$store.appData.lang].quickLinks"></h4>
+                    <ul class="space-y-2">
+                        <li><a href="index" class="text-text-secondary hover:text-accent-pink transition-colors duration-200 footer-link-hover" x-text="$store.appData.texts[$store.appData.lang].navHome"></a></li>
+                        <li><a href="privacy" class="text-text-secondary hover:text-accent-pink transition-colors duration-200 footer-link-hover" x-text="$store.appData.texts[$store.appData.lang].navPrivacy"></a></li>
+                        <li><a href="tos" class="text-text-secondary hover:text-accent-pink transition-colors duration-200 footer-link-hover" x-text="$store.appData.texts[$store.appData.lang].navTerms"></a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="font-bold text-xl mb-4 text-text-primary" x-text="$store.appData.texts[$store.appData.lang].legal"></h4>
+                    <ul class="space-y-2">
+                        <li><a href="privacy" class="text-text-secondary hover:text-accent-pink transition-colors duration-200 footer-link-hover" x-text="$store.appData.texts[$store.appData.lang].privacyPolicy"></a></li>
+                        <li><a href="tos" class="text-text-secondary hover:text-accent-pink transition-colors duration-200 footer-link-hover" x-text="$store.appData.texts[$store.appData.lang].termsOfService"></a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="max-w-7xl mx-auto border-t border-gray-800 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center text-sm text-gray-500">
+                <p x-text="$store.appData.texts[$store.appData.lang].footerRights"></p>
+                <p class="mt-2 md:mt-0 text-gray-400">Developed by <span class="text-accent-aqua hover:underline">rescci</span></p>
+                <div class="flex space-x-6 mt-6 md:mt-0">
+                    <a href="https://github.com/RRechz" target="_blank" aria-label="Github" class="transform hover:scale-110 transition-transform duration-300 text-gray-400 hover:text-accent-aqua">
+                        <i class='bx bxl-github text-2xl'></i>
+                    </a>
+                    <a href="https://t.me/by_BabelSoftware" target="_blank" aria-label="Telegram" class="transform hover:scale-110 transition-transform duration-300 text-gray-400 hover:text-accent-aqua">
+                        <i class='bx bxl-telegram text-2xl'></i>
+                    </a>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <button id="back-to-top" class="fixed bottom-8 right-8 p-3 rounded-full shadow-lg transition-all duration-300 transform scale-0 opacity-0 bg-accent-pink text-white hover:bg-accent-purple z-40">
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-arrow-up" width="28" height="28" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M12 5l0 14" /><path d="M18 11l-6 -6l-6 6" /></svg>
+    </button>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollToPlugin.min.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.13.7/dist/cdn.min.js"></script>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            gsap.registerPlugin(ScrollTrigger, ScrollToPlugin);
+
+            const backToTopButton = document.getElementById('back-to-top');
+
+            ScrollTrigger.create({
+                trigger: "body",
+                start: "top -20%",
+                end: "bottom top",
+                onEnter: () => gsap.to(backToTopButton, { scale: 1, opacity: 1, duration: 0.4, ease: "back.out(1.7)" }),
+                onLeaveBack: () => gsap.to(backToTopButton, { scale: 0, opacity: 0, duration: 0.3 })
+            });
+
+            backToTopButton.addEventListener('click', () => {
+                gsap.to(window, { scrollTo: 0, duration: 1.2, ease: "power3.inOut" });
+            });
+        });
+    </script>
+</body>
+</html>
